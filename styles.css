@@ -279,6 +279,8 @@ body.modal-open {
 	margin-top:0px;
 }
 
+
+/* Button Stylings still way off*/
 .btn.cancel{
 	background-color: #d8d8d8;
 	background-image: -moz-linear-gradient(#f8f8f8,#d8d8d8);
