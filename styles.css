@@ -51,6 +51,10 @@ body {
 	text-shadow: 0 1px 0 #fff;
 }
 
+.tweet:hover {
+	background-color:#f5f5f5;
+}
+
 .tweet-content {
 	padding-top: 0;
 }
@@ -245,5 +249,49 @@ span.action-more {
 	top: 0;
 	left: 0;
 }
+
+/* Modal Styles*/
+body.modal-open {
+	margin-right:0px;
+}
+
+.modal-header {
+	background-image: -webkit-linear-gradient(top,#f5f5f5 0,#ececec 100%);
+	background-image: -ms-linear-gradient(top,#f5f5f5 0,#ececec 100%);
+	background-image: -o-linear-gradient(top,#f5f5f5 0,#ececec 100%);
+	/* Missing moz vendor prefix */
+	border-radius:10px 10px 0px 0px;
+	text-align: center;
+	padding:8px;
+}
+
+.modal-header h4{
+	text-shadow:0 1px 0 #fff;
+	color:#555;
+	font-size:14px;
+}
+
+.modal-body {
+	background-color:#f5f5f5; 
+}
+
+.modal-footer {
+	margin-top:0px;
+}
+
+.btn.cancel{
+	background-color: #d8d8d8;
+	background-image: -moz-linear-gradient(#f8f8f8,#d8d8d8);
+	background-image: -ms-linear-gradient(#f8f8f8,#d8d8d8);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f8f8f8),color-stop(100%,#d8d8d8));
+	background-image: -webkit-linear-gradient(#f8f8f8,#d8d8d8);
+	background-image: -o-linear-gradient(#f8f8f8,#d8d8d8);
+	background-image: linear-gradient(#f8f8f8,#d8d8d8);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	border-color: #bbb;
+	color:#666;
+}
+
+
 
 
