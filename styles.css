@@ -13,7 +13,7 @@ body {
 .page-container {
 	padding: 54px 14px 15px;
 	margin: 0 auto;
-	width: 837px;
+	width: 870px;
 }
 
 .dashboard {
@@ -89,6 +89,7 @@ textarea.tweet-compose {
 	padding: 5px 10px;
 	font-size: 13px;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .char-count {

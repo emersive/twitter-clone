@@ -1,10 +1,13 @@
 $(document).ready(function() {
-	$(".tweet-compose").on("click",function() {
-		$(".tweet-controls").show();
-		$(".tweet-compose").css("height","5em");
+
+	$(".dashboard .tweet-compose").on("click",function() {
+		$(".tweet-content .tweet-controls").show();
+		$(this).css("height","5em");
 	});
 
-
+	$(".stream .tweet-compose").on("click",function() {
+		$(this).css("height","5em");
+	});
 
 // $( ".tweet-compose" )
 //   .keyup(function() {
@@ -22,17 +25,42 @@ $( ".tweet-compose").on("keyup", function() {
 			if (tweetLength <= 130) {
 			$(".char-count").css("color","black");
 		 }
-		 	if(tweetLength > 0){
-		 		$(".tweet-controls button").css({"background-color":"#019ad2", "color": "#fff","text-shadow":"none"});
-		 	}
+
 		 	if(tweetLength == 0 || tweetLength > 140){
 		 		$(".tweet-controls button").css({"background-color":"#ddd", "color": "#777","text-shadow":"none"});
+		 		$(".tweet-controls button").attr('disabled', true);
 		 	}
+
+		 	if(tweetLength > 0){
+		 		$(".tweet-controls button").css({"background-color":"#019ad2", "color": "#fff","text-shadow":"none"});
+		 		$(".tweet-controls button").removeAttr('disabled');
+		 	}
+
 		});
 
 $(".tweet-controls button").on("click", function(){
-	$( ".stream" ).append( "<div>text</div>" );
+		var newTweetText = $(".tweet-content textarea").val();
+		var tweetClone = $( ".tweet" ).first("child").clone();
+		tweetClone.find("p.tweet-text").text(newTweetText);
+		// Were we left off together
+		var profilePic = $(".profile-summary img.avatar").attr("src");
+		tweetClone.find("img.avatar").attr("src", profilePic);
+		tweetClone.find("full.name").text("Britton Stanfill");
+		tweetClone.prependTo(".stream");
+
+
+	//.prependTo( ".stream" );
 });
+
+	$(".tweet-actions ul li:nth-child(2n").on("click", function(){
+		$(this).attr('data-toggle', 'modal');
+		$(this).attr('href', "#myModal");
+	});
+
+
+// $(".tweet-actions ul li:nth-child(2n)").on("click", function(){
+//   $('#myModal').modal({show: false});
+// });
 
 
 
